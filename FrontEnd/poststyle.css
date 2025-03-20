@@ -1,0 +1,44 @@
+*{
+    font-family: "Poppins", sans-serif;
+
+}
+
+#post-container{
+    width: 70%;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+.post-header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-user-image img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.post-username{
+margin: 0px;
+}
+
+.post-time{
+    color: rgb(211, 211, 211);
+    margin: 0px;
+    font-size: 12px;
+}
+.post-image{
+    display: flex;
+    justify-content: center;
+
+}
+
+.post-image img{
+    width: 50%;
+    border-radius: 8px;
+    margin: 15px;
+   
+}
