@@ -1,4 +1,4 @@
-const handleLogin = () => {
+const handleLogin = async() => {
     
 const userIdinput = document.getElementById("user-id");
 const userPassinput = document.getElementById("password");
@@ -11,8 +11,24 @@ userId: userId,
 password: password,
 }
 
-fetchUserInfo(user);
+ const userInfo = await fetchUserInfo(user);
 
+ const errorElement = document.getElementById("error-messsage");
+
+//  check login data with database
+
+ if(userInfo.length ==0){
+    errorElement.classList.remove("hidden");
+ }else{
+    errorElement.classList.add("hidden");
+
+    //save user data to local storage before jump next page
+localStorage.setItem("logedInUser", JSON.stringify(userInfo[0]));
+
+    // jump to next page
+    window.location.href = "/post.html";
+ }
+ 
 }
 
 const fetchUserInfo = async (user) => {
@@ -28,7 +44,8 @@ try{
         data = await res.json();
 }catch(err){
     console.log("error connecting to the database", err);
-}finally{
-console.log("user data from server", data);
+}
+finally{
+return data;
 }
 }
