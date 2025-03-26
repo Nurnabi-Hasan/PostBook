@@ -31,7 +31,7 @@ allPosts.forEach(post => {
     <div class="post-header">
          
             <div class="post-user-image">
-                <img src=${post.postdUserImage} />
+                  <img src= ${post.postdUserImage} >
             </div>
         
         <div class="post-username-time">
@@ -51,7 +51,7 @@ allPosts.forEach(post => {
         </div>
         
         <div class="post-image">
-            <img src= ${post.postdUserImage} />
+            <img src= ${post.postedImageUrl} >
         
         </div>
    
