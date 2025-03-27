@@ -47,7 +47,7 @@ let query = db.query(getUserInfoSql,[userId, password], (err, result)=>{
 
 app.get("/getAllPosts", (req, res) =>{
 
-  const sqlforAllPosts= `SELECT users.userName AS postedUserName, users.userImage AS postdUserImage, posts.postedTime, posts.postedText, posts.postedImageUrl FROM posts INNER JOIN users ON posts.postedUserId=users.userId ORDER BY posts.postedTime DESC`;
+  const sqlforAllPosts= `SELECT users.userName AS postedUserName, users.userImage AS postdUserImage, posts.postId, posts.postedTime, posts.postedText, posts.postedImageUrl FROM posts INNER JOIN users ON posts.postedUserId=users.userId ORDER BY posts.postedTime DESC`;
 
   let query = db.query(sqlforAllPosts, (err, result) =>{
     if(err){
@@ -57,12 +57,29 @@ app.get("/getAllPosts", (req, res) =>{
       console.log(result);
       res.send(result);
     }
-
-
   })
 
 })
 
+
+app.get("/getAllComments/:postId", (req, res) =>{
+
+  let id = req.params.postId;
+
+  let sqlForAllComments = `SELECT users.userName AS commentedUserName, users.userImage AS commenteduserImage, comments.commentId, comments.commentOfpostId, comments.commentText, comments.commentTime
+FROM comments INNER JOIN users ON comments.commentedUserId=users.userId WHERE comments.commentOfpostId=${id}`;
+
+    let query = db.query(sqlForAllComments, (err, result) =>{
+    if(err){
+      console.log("eror loading posts", err);
+      throw err;
+    }else{
+     
+      res.send(result);
+    }
+  })
+
+})
 
 
 

@@ -23,7 +23,7 @@ const postContainer = document.getElementById("post-container")
 postContainer.innerHTML="";
 
 
-allPosts.forEach(post => {
+allPosts.forEach( async post => {
    const postDiv = document.createElement("div")
    postDiv.classList.add("post")
 
@@ -54,15 +54,54 @@ allPosts.forEach(post => {
             <img src= ${post.postedImageUrl} >
         
         </div>
-   
-   `
-
+      `
 postContainer.appendChild(postDiv);
+
+// fetch all comments of a post
+
+const postComments =await fetchAllComments(post.postId);
+console.log("Post Comments: ", postComments);
+
+postComments.forEach(comment => {
+    const commentHolderDiv = document.createElement('div');
+    commentHolderDiv.classList.add("comments-holder");
+    commentHolderDiv.innerHTML =
+     ` <div class="comment">
+        <div class="comment-user-img">
+        <img src=${comment.commenteduserImage} >
+        </div>
+        
+        <div class="comment-text-container">
+            <h4>${comment.commentedUserName} </h4>
+            <p>${comment.commentText}</p>
+        </div>
+        
+        
+        </div> `
+
+        postDiv.appendChild(commentHolderDiv);
+})
+
 
 
 });
 
 }
+
+const fetchAllComments = async (postId) => {
+    let commentOfPost = [];
+
+    try{
+        const res = await fetch(`http://localhost:5000/getAllComments/${postId}`);
+        commentOfPost = await res.json();
+    }catch(err){
+        console.log("Error featching data form server", err);
+
+    }finally{
+        return commentOfPost;
+    }
+
+};
 
 
 
