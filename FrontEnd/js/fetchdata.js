@@ -1,3 +1,20 @@
+const showLoggedInUserName = async () =>{
+
+    const loggedUserElement = document.getElementById("logged-userName");
+    
+    //gettng user name form Local Storage
+    let user = localStorage.getItem("logedInUser");
+
+    if(user){
+        user = JSON.parse(user);
+    }
+
+    loggedUserElement.innerText = user.userName;
+
+}
+
+
+
 const fetchAllPosts = async () =>{
     let data;
 
@@ -179,3 +196,4 @@ try{
 
 
 fetchAllPosts();
+showLoggedInUserName();
