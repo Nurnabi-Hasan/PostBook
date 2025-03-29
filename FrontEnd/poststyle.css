@@ -3,8 +3,17 @@
 
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
 #post-container{
-    width: 70%;
+    width: 90%;
     background-color: rgb(42, 116, 0);
     margin: 0 auto;
     padding: 10px;

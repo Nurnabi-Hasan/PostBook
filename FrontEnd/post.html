@@ -12,9 +12,17 @@
 
     <link rel="stylesheet" href="/poststyle.css">
 </head>
-<body>
+<body onload="showLoggedInUserName(); checkForLoggedInUser();">
     
-<h1>Hi <Span id="logged-userName">Username</Span></h1>
+<div class="header">
+
+    <h1>Hi <Span id="logged-userName">Username</Span></h1>
+
+    <button class="logOutBtn" onclick=logOut()>Logout</button>
+
+</div>
+
+
 
 <section id="post-container">
 

@@ -14,6 +14,22 @@ const showLoggedInUserName = async () =>{
 }
 
 
+const checkForLoggedInUser = () =>{
+
+    let user = localStorage.getItem("logedInUser");
+    if(user){
+        user = JSON.parse(user);
+    }else{
+        window.location.href = '/index.html';
+    }
+
+}
+
+const logOut = () => {
+    localStorage.clear();
+    checkForLoggedInUser();
+}
+
 
 const fetchAllPosts = async () =>{
     let data;
@@ -196,4 +212,3 @@ try{
 
 
 fetchAllPosts();
-showLoggedInUserName();
