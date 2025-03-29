@@ -11,6 +11,83 @@
     margin: 0 auto;
 }
 
+.logOutBtn{
+    background-color: red;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+}
+.logOutBtn:hover{
+    background-color: rgb(109, 3, 3);
+
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+   
+}
+
+.add-new-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin: 0 auto;
+}
+#post-text{
+ padding: 10px;   
+}
+
+#image-url{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+
+}
+
+#postBtn{
+    background-color: rgb(110, 1, 87);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+#postBtn:hover{
+    background-color: rgb(58, 1, 46);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+}
+
+.addPost{
+    background-color: rgb(6, 137, 160);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+}
+.addPost:hover{
+    background-color: rgb(3, 84, 109);
+
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+   
+}
+
+
+
 
 #post-container{
     width: 90%;
@@ -30,6 +107,7 @@
     border-radius: 10px;
     margin: 20px;
 }
+
 
 
 

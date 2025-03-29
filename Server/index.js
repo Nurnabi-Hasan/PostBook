@@ -103,7 +103,26 @@ app.post("/postComment", (req, res) =>{
   
 });
 
+app.post("/addNewPost", (req, res)=>{
 
+  const {postedUserId, postedTime, postedText, postedImageUrl } = req.body;
+
+  let sqlForAddingNewPost = 
+  `INSERT INTO posts (postId, postedUserId, postedTime, postedText, postedImageUrl) VALUES (NULL, ?, ?, ?, ?);`;
+  let query = db.query(sqlForAddingNewPost, [postedUserId, postedTime, postedText, postedImageUrl], (err, result) =>{
+
+    if(err){
+      console.log("error Sending data to server", err);
+    }else{
+      res.send(result);
+    }
+
+  }
+);
+
+
+}
+);
 
 
 app.listen(port, () => {

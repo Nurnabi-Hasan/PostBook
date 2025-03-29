@@ -13,6 +13,63 @@ const showLoggedInUserName = async () =>{
 
 }
 
+const handleAddNewPOst= async()=>{
+
+//collect Commented User id form Local Storage
+
+let user = localStorage.getItem('logedInUser')
+if(user){
+
+    user = JSON.parse(user);
+
+}
+const postedUserId = user.userId;
+
+//current time of comment 
+
+let now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+let timeOfPost = now.toISOString();
+console.log(timeOfPost);
+
+// post text
+
+const postTextElement =  document.getElementById("post-text");
+const postText = postTextElement.value; 
+
+
+//post Image
+const postImageElement =  document.getElementById("image-url");
+const postImage = postTextElement.value;
+
+const postObject =
+{
+
+    postedUserId: postedUserId,
+    postedTime: timeOfPost,
+    postedText: postText,
+    postedImageUrl: postImage,
+
+}
+
+try{
+    const res =await fetch("http://localhost:5000/addNewPost",{
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify(postObject),
+         });
+      const data = await res.json();
+}catch(err){
+    console.log("Error Sending data to Database", err);
+}finally{
+    location.reload();
+}
+console.log("Sending data ", postObject);
+}
+
+
 
 const checkForLoggedInUser = () =>{
 
@@ -29,7 +86,6 @@ const logOut = () => {
     localStorage.clear();
     checkForLoggedInUser();
 }
-
 
 const fetchAllPosts = async () =>{
     let data;
@@ -212,3 +268,4 @@ try{
 
 
 fetchAllPosts();
+showLoggedInUserName(); 
