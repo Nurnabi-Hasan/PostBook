@@ -126,8 +126,8 @@ allPosts.forEach( async post => {
         <div class="post-username-time">
             <p class="post-username">${post.postedUserName}</p>
             <div class="post-time">
-                <span>${post.postedTime}</span>
-                <span>hour ago</span>
+                <span>${timeDiffence(post.postedTime)}</span>
+                <span>ago</span>
             </div>
         
         </div>
