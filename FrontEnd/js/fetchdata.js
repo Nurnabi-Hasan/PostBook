@@ -82,9 +82,29 @@ postComments.forEach(comment => {
         postDiv.appendChild(commentHolderDiv);
 })
 
+// adding comment to post
 
+const addCommentToPost = document.createElement("div");
+addCommentToPost.classList.add("comment-input-holder");
 
+addCommentToPost.innerHTML= 
+`
+<div class="comment-input-field-holder">
+            <input type="text" 
+            placeholder="Write your comment" 
+            class="comment-input-field" 
+            id="comment-input-for-postId-${post.postId}">
+        </div> 
+        
+        <div class="comment-btn-holder">
+        
+            <button class="comment-btn" onClick= handlepostComment(${post.postId}) id="btn">Comment</button>
+        
+        </div>
+`
+postDiv.appendChild(addCommentToPost);
 });
+
 
 }
 
@@ -103,6 +123,59 @@ const fetchAllComments = async (postId) => {
 
 };
 
+
+const handlepostComment = async(postId) =>{
+
+//collect Commented User id form Local Storage
+
+let user = localStorage.getItem('logedInUser')
+if(user){
+
+    user = JSON.parse(user);
+
+}
+const commentedUserId = user.userId;
+
+// getting comment Text
+
+const commentedTextElement =document.getElementById(`comment-input-for-postId-${postId}`);
+
+const commentedText = commentedTextElement.value;
+
+//current time of comment 
+
+let now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+let timeOfComment = now.toISOString();
+console.log(timeOfComment);
+
+
+const commentObject = {
+
+    commentOfpostId: postId,
+    commentedUserId: commentedUserId,
+    commentText: commentedText,
+    commentTime: timeOfComment,
+};
+
+try{
+    const res =await fetch("http://localhost:5000/postComment",{
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify(commentObject),
+         });
+      // const data = await res.json();
+}catch(err){
+    console.log("Error Sending data to Database", err);
+}finally{
+    location.reload();
+}
+
+
+
+}
 
 
 fetchAllPosts();

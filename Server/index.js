@@ -82,6 +82,26 @@ FROM comments INNER JOIN users ON comments.commentedUserId=users.userId WHERE co
 })
 
 
+app.post("/postComment", (req, res) =>{
+
+  const {commentOfpostId, commentedUserId, commentText, commentTime } = req.body;
+
+  let aqlForAddingComment = 
+  `
+  INSERT INTO comments (commentId, commentOfpostId, commentedUserId, commentText, commentTime) VALUES (NULL, ?, ?, ?, ?);
+  `;
+  let query = db.query(aqlForAddingComment, [commentOfpostId, commentedUserId, commentText, commentTime], (err, result) =>{
+
+    if(err){
+      console.log("error Sending data to server", err);
+    }else{
+      res.send(result);
+    }
+
+  }
+);
+  
+});
 
 
 
