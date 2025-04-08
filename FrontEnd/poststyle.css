@@ -34,7 +34,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-margin: 0 auto;
+    margin: 0 auto;
+   
+    
 }
 #post-text{
  padding: 10px;   
@@ -46,6 +48,8 @@ margin: 0 auto;
     width: 90%;
 
 }
+
+
 
 #postBtn{
     background-color: rgb(110, 1, 87);
@@ -108,7 +112,27 @@ margin: 0 auto;
     margin: 20px;
 }
 
+.post-header-button{
+    display: flex;
+    justify-content: space-between;
+}
 
+#deleteBtn{
+   border: none;
+   border-radius: 8px;
+   color:white;
+   background-color: red;
+   padding: 10px;
+    
+}
+
+#editBtn{
+    border: none;
+    border-radius: 8px;
+    color:white;
+    background-color: rgb(82, 4, 82);
+    padding: 10px;     
+ }
 
 
 
@@ -116,6 +140,7 @@ margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 5px;
+     
 }
 
 .post-user-image img{

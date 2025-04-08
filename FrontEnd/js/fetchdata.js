@@ -40,7 +40,7 @@ const postText = postTextElement.value;
 
 //post Image
 const postImageElement =  document.getElementById("image-url");
-const postImage = postTextElement.value;
+const postImage = postImageElement.value;
 
 const postObject =
 {
@@ -68,8 +68,6 @@ try{
 }
 console.log("Sending data ", postObject);
 }
-
-
 
 const checkForLoggedInUser = () =>{
 
@@ -117,6 +115,7 @@ allPosts.forEach( async post => {
    postDiv.classList.add("post")
 
    postDiv.innerHTML=`
+ 
     <div class="post-header">
          
             <div class="post-user-image">
@@ -131,8 +130,10 @@ allPosts.forEach( async post => {
             </div>
         
         </div>
-        
+     
         </div>
+
+
         
         <div class="post-text">
         <p class="post-text-content">${post.postedText}</p>
@@ -267,5 +268,8 @@ try{
 }
 
 
+
+
 fetchAllPosts();
 showLoggedInUserName(); 
+
