@@ -23,57 +23,50 @@
 
 .logOutBtn:hover {
     background-color: rgb(109, 3, 3);
-
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 15px;
-
+    cursor: pointer;
 }
 
 .addnewpost {
+    width: 90%;
+    margin:20px auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
 
+}
 
-
+.addnewpost h2{
+    color: rgb(2, 71, 88);
 }
 
 #post-text {
     padding: 10px;
+    font-size: 14;
+   
 
 }
 
 #image-url {
     padding: 10px;
     margin-bottom: 10px;
-    width: 90%;
+
 
 }
 
 
 
 #postBtn {
-    background-color: rgb(110, 1, 87);
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(6, 141, 107);
     color: white;
-    font-size: 15px;
-    width: 20%;
-    margin-bottom: 10px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
 }
 
 #postBtn:hover {
-    background-color: rgb(58, 1, 46);
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 15px;
+    background-color: rgb(2, 73, 70);
+    transition: 1s;
+    cursor: pointer;
 }
 
 .addPost {
@@ -181,19 +174,28 @@
     color: white;
     background-color: red;
     padding: 10px;
+}
 
-
+#deleteBtn:hover {
+    background-color: rgb(116, 11, 11);
+    transition: 1s;
+    cursor: pointer;
 }
 
 #editBtn {
     border: none;
     border-radius: 8px;
     color: white;
-    background-color: rgb(82, 4, 82);
+    background-color: rgb(21, 34, 150);
     padding: 10px;
 
 }
 
+#editBtn:hover {
+    background-color: rgb(4, 21, 58);
+    transition: 1s;
+    cursor: pointer;
+}
 
 
 .post-header {
@@ -277,9 +279,16 @@ p {
 .comment-btn {
     padding: 10px;
     border-radius: 5px;
-    background-color: rgb(36, 0, 31);
+    background-color: rgb(13, 187, 218);
     color: white;
+    border: none;
+}
 
+.comment-btn:hover {
+    cursor: pointer;
+    transition: 1s;
+    background-color: rgb(4, 68, 105);
+    
 }
 
 .comment-input-field-holder {

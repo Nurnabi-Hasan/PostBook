@@ -322,8 +322,7 @@ const handleUpdatePost = async () => {
 
         const data = await res.json();
 
-        document.getElementById('update-post-container').style.display = 'none';
-        document.getElementById('add-post-container').style.display = 'block';
+       
 
         await fetchAllPosts();
     } catch (err) {
@@ -337,7 +336,6 @@ const populateUpdateForm = (post) => {
     document.getElementById('update-post-id').value = post.postId;
     document.getElementById('updatePost-text').value = post.postedText;
     document.getElementById('updatePost-image').value = post.postedImageUrl;
-    // document.getElementById('update-post-container').style.display = 'block';
     document.getElementById('update-post-container').style.display = 'block';
     document.getElementById('addnewpost').style.display = 'none';
 };
@@ -347,13 +345,4 @@ const populateUpdateForm = (post) => {
 
 fetchAllPosts();
 showLoggedInUserName();
-checkInputs()
 
-
-function hideUpdatePostSection() {
-    // Hide update section
-    document.getElementById('update-post-container').style.display = 'none';
-
-    // Show the add post section again
-    document.getElementById('addnewpost').style.display = 'block';
-  }
