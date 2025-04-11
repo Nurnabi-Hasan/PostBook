@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,309 +9,353 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="/poststyle.css">
 </head>
-<body >
-    
-<div class="header">
 
-    <h1>Hi <Span id="logged-userName">Username</Span></h1>
+<body>
 
-    <div>
-        <button class="addPost" onclick="">Add Post</button>
-        <button class="logOutBtn" onclick=logOut()>Logout</button>    
-    </div>
-    
-</div>
+    <div class="header">
 
-<!-- add new post section -->
-<section class="add-new-post">
-<div>
-    <h2>Add New post</h2>
+        <h1>Hi <Span id="logged-userName">Username</Span></h1>
 
-<div>
-    <textarea  name="" id="post-text" placeholder="Whats on your Mind" rows="5" cols="50" required></textarea>
+        <div>
+            <!-- <button class="addPost" >Add Post</button> -->
+            <button class="logOutBtn" onclick=logOut()>Logout</button>
+        </div>
 
-    
-</div>
-<div>
-    <input type="url" name="" id="image-url" placeholder="Paste your Image Url">
-</div>
-
-<div class="post-button">
-<button id="postBtn" onclick=handleAddNewPOst();>Post</button>
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<section id="post-container">
-
-    <!-- post -->
-
-<div class="post">
-
-
-<div class="post-header">
- 
-    <div class="post-user-image">
-        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user=image">
     </div>
 
-<div class="post-username-time">
-    <p class="post-username">username</p>
-    <div class="post-time">
-        <span>13</span>
-        <span>hour ago</span>
-    </div>
-</div>
-</div>
+    <!-- add new post section -->
+    <section class="addnewpost" id="addnewpost">
+        <div>
+            <h2>Add New post</h2>
+
+            <div>
+                <textarea name="" id="post-text" placeholder="Whats on your Mind" rows="5" cols="50"
+                    required></textarea>
 
 
+            </div>
+            <div>
+                <input type="url" name="" id="image-url" placeholder="Paste your Image Url">
+            </div>
 
-<div class="post-text">
-<p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
+            <div class="post-button">
+                <button id="postBtn" onclick=handleAddNewPOst();>Post</button>
+            </div>
 
-</div>
-
-<div class="post-image">
-    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user=image">
-
-</div>
-
-<!-- comments for every  post -->
-
-<div class="comments-holder">
-<div class="comment">
-<div class="comment-user-img">
-<img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
-</div>
-
-<div class="comment-text-container">
-    <h4>Commented User Name </h4>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
-</div>
+        </div>
 
 
-</div>
+    </section>
 
-<div class="comment">
-    <div class="comment-user-img">
-    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
-    </div>
+    <section id="update-post-container" style="display: none;">
+        <article>
+            <h2>Update Post</h2>
     
-    <div class="comment-text-container">
-        <h4>Commented User Name </h4>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
-    </div>
+            <input type="hidden" id="update-post-id">
     
+            <div>
+                <textarea id="updatePost-text" cols="50" rows="5" placeholder="Update post text"></textarea>
+            </div>
     
-    </div>
-
-</div>
-
-
-<!-- comment input field -->
-
-<div class="comment-input-holder">
-<div class="comment-input-field-holder">
-    <input type="text" placeholder="Write your comment" class="comment-input-field" id="comment-input-for-postId">
-</div> 
-
-<div class="comment-btn-holder">
-
-    <button class="comment-btn" id="btn">Comment</button>
-
-</div>
-
-</div>
-
-
-
-
-</div>
-
-
-    <!-- post -->
-
-    <div class="post">
-        <div class="post-header">
-         
-            <div class="post-user-image">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user=image">
+            <div>
+                <input type="text" id="updatePost-image" placeholder="Update post Image URL">
             </div>
-        
-        <div class="post-username-time">
-            <p class="post-username">username</p>
-            <div class="post-time">
-                <span>13</span>
-                <span>hour ago</span>
+    
+            <div>
+                <button onclick="handleUpdatePost()" class="updatePost-btn">UPDATE</button>
             </div>
-        
-        </div>
-        
-        </div>
-        
-        <div class="post-text">
-        <p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
-        
-        </div>
-        
-        <div class="post-image">
-            <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user=image">
-        
-        </div>
-        
-        <!-- comments for every  post -->
-        
-        <div class="comments-holder">
-        <div class="comment">
-        <div class="comment-user-img">
-        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
-        </div>
-        
-        <div class="comment-text-container">
-            <h4>Commented User Name </h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
-        </div>
-        
-        
-        </div>
-        
-        <div class="comment">
-            <div class="comment-user-img">
-            <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
-            </div>
-            
-            <div class="comment-text-container">
-                <h4>Commented User Name </h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
-            </div>
-            
-            
-            </div>
-        
-        </div>
-        
-        
-        <!-- comment input field -->
-        
-        <div class="comment-input-holder">
-        <div class="comment-input-field-holder">
-            <input type="text" placeholder="Write your comment" class="comment-input-field" id="comment-input-for-postId">
-        </div> 
-        
-        <div class="comment-btn-holder">
-        
-            <button class="comment-btn" id="btn">Comment</button>
-        
-        </div>
-        
-        </div>
-        
-        
-        
-        
-        </div>
+        </article>
+    </section>
 
-    <!-- post -->
+    <section id="post-container">
 
-    <div class="post">
-        <div class="post-header">
-         
-            <div class="post-user-image">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user=image">
+        <!-- post -->
+
+        <div class="post">
+
+
+            <div class="post-header-button">
+                <div class="post-header">
+
+                    <div class="post-user-image">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user=image">
+                    </div>
+
+                    <div class="post-username-time">
+                        <p class="post-username">username</p>
+                        <div class="post-time">
+                            <span>13</span>
+                            <span>hour ago</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="post-control">
+                    <button id="deleteBtn">Delete</button>
+                    <button id="editBtn">Edit</button>
+                </div>
+
             </div>
-        
-        <div class="post-username-time">
-            <p class="post-username">username</p>
-            <div class="post-time">
-                <span>13</span>
-                <span>hour ago</span>
+
+            <div class="post-text">
+                <p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                    doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
+
             </div>
-        
-        </div>
-        
-        </div>
-        
-        <div class="post-text">
-        <p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
-        
-        </div>
-        
-        <div class="post-image">
-            <img src="https://i.ibb.co.com/M5BwDcDK/nhpic.jpg" alt="user=image">
-        
-        </div>
-        
-        <!-- comments for every  post -->
-        
-        <div class="comments-holder">
-        <div class="comment">
-        <div class="comment-user-img">
-        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
-        </div>
-        
-        <div class="comment-text-container">
-            <h4>Commented User Name </h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
-        </div>
-        
-        
-        </div>
-        
-        <div class="comment">
-            <div class="comment-user-img">
-            <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80" alt="user Image">
+
+            <div class="post-image">
+                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                    alt="user=image">
+
             </div>
-            
-            <div class="comment-text-container">
-                <h4>Commented User Name </h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+
+            <!-- comments for every  post -->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
             </div>
-            
-            
+
+
+            <!-- comment input field -->
+
+            <div class="comment-input-holder">
+                <div class="comment-input-field-holder">
+                    <input type="text" placeholder="Write your comment" class="comment-input-field"
+                        id="comment-input-for-postId">
+                </div>
+
+                <div class="comment-btn-holder">
+
+                    <button class="comment-btn" id="btn">Comment</button>
+
+                </div>
+
             </div>
-        
-        </div>
-        
-        
-        <!-- comment input field -->
-        
-        <div class="comment-input-holder">
-        
-            <div class="comment-input-field-holder">
-            <input type="text" 
-            placeholder="Write your comment" 
-            class="comment-input-field" 
-            id="comment-input-for-postId">
-        </div> 
-        
-        <div class="comment-btn-holder">
-        
-            <button class="comment-btn" id="btn">Comment</button>
-        
-        </div>
-        
-        </div>
-        
-        
-        
-        
-        </div>
 
 
 
 
-</section>
+        </div>
 
-<script src="/js/utils/calculateTimediff"></script>
-<script src="/js/fetchdata.js"></script>
+
+        <!-- post -->
+
+        <div class="post">
+            <div class="post-header">
+
+                <div class="post-user-image">
+                    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                        alt="user=image">
+                </div>
+
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="post-time">
+                        <span>13</span>
+                        <span>hour ago</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="post-text">
+                <p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                    doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
+
+            </div>
+
+            <div class="post-image">
+                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                    alt="user=image">
+
+            </div>
+
+            <!-- comments for every  post -->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- comment input field -->
+
+            <div class="comment-input-holder">
+                <div class="comment-input-field-holder">
+                    <input type="text" placeholder="Write your comment" class="comment-input-field"
+                        id="comment-input-for-postId">
+                </div>
+
+                <div class="comment-btn-holder">
+
+                    <button class="comment-btn" id="btn">Comment</button>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        <!-- post -->
+
+        <div class="post">
+            <div class="post-header">
+
+                <div class="post-user-image">
+                    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                        alt="user=image">
+                </div>
+
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="post-time">
+                        <span>13</span>
+                        <span>hour ago</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="post-text">
+                <p class="post-text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                    doloremque sit qui deleniti in eligendi numquam quidem illo ab voluptatem?</p>
+
+            </div>
+
+            <div class="post-image">
+                <img src="https://i.ibb.co.com/M5BwDcDK/nhpic.jpg" alt="user=image">
+
+            </div>
+
+            <!-- comments for every  post -->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="comment">
+                    <div class="comment-user-img">
+                        <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=600&quality=80"
+                            alt="user Image">
+                    </div>
+
+                    <div class="comment-text-container">
+                        <h4>Commented User Name </h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, quo.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- comment input field -->
+
+            <div class="comment-input-holder">
+
+                <div class="comment-input-field-holder">
+                    <input type="text" placeholder="Write your comment" class="comment-input-field"
+                        id="comment-input-for-postId">
+                </div>
+
+                <div class="comment-btn-holder">
+
+                    <button class="comment-btn" id="btn">Comment</button>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </section>
+
+    <script src="/js/utils/calculateTimediff"></script>
+    <script src="/js/fetchdata.js"></script>
 </body>
+
 </html>

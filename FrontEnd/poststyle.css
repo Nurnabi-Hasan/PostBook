@@ -1,9 +1,9 @@
-*{
+* {
     font-family: "Poppins", sans-serif;
 
 }
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,7 +11,8 @@
     margin: 0 auto;
 }
 
-.logOutBtn{
+
+.logOutBtn {
     background-color: red;
     padding: 12px;
     border: none;
@@ -19,7 +20,8 @@
     color: white;
     font-size: 15px;
 }
-.logOutBtn:hover{
+
+.logOutBtn:hover {
     background-color: rgb(109, 3, 3);
 
     padding: 12px;
@@ -27,22 +29,25 @@
     border-radius: 8px;
     color: white;
     font-size: 15px;
-   
+
 }
 
-.add-new-post{
+.addnewpost {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-   
-    
-}
-#post-text{
- padding: 10px;   
+
+
+
 }
 
-#image-url{
+#post-text {
+    padding: 10px;
+
+}
+
+#image-url {
     padding: 10px;
     margin-bottom: 10px;
     width: 90%;
@@ -51,7 +56,7 @@
 
 
 
-#postBtn{
+#postBtn {
     background-color: rgb(110, 1, 87);
     padding: 12px;
     border: none;
@@ -62,7 +67,7 @@
     margin-bottom: 10px;
 }
 
-#postBtn:hover{
+#postBtn:hover {
     background-color: rgb(58, 1, 46);
     padding: 12px;
     border: none;
@@ -71,7 +76,7 @@
     font-size: 15px;
 }
 
-.addPost{
+.addPost {
     background-color: rgb(6, 137, 160);
     padding: 12px;
     border: none;
@@ -79,7 +84,8 @@
     color: white;
     font-size: 15px;
 }
-.addPost:hover{
+
+.addPost:hover {
     background-color: rgb(3, 84, 109);
 
     padding: 12px;
@@ -87,15 +93,66 @@
     border-radius: 8px;
     color: white;
     font-size: 15px;
-   
+
+}
+
+
+#update-post-container{
+    width: 90%;
+    margin:20px auto;
+    display: flex;
+    justify-content: center;
+    
 }
 
 
 
+@media screen and (max-width: 500px) {
+   
+}
 
-#post-container{
+.updatePost-btn{
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(86, 155, 218);
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+}
+
+.updatePost-btn:hover{
+    background-color: rgb(49, 117, 179);
+    transition: 1s;
+    cursor: pointer;
+}
+
+#update-post-container article >h2{
+    color: rgb(184, 86, 86);
+}
+
+#updatePost-text{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+    #updatePost-text{
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+#updatePost-image{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+#post-container {
     width: 90%;
-    background-color: rgb(42, 116, 0);
+    background-color: rgb(91, 122, 124);
     margin: 0 auto;
     padding: 10px;
     justify-content: center;
@@ -104,7 +161,7 @@
     align-items: center;
 }
 
-.post{
+.post {
     width: 60%;
     padding: 15px;
     border: 2px solid black;
@@ -112,111 +169,119 @@
     margin: 20px;
 }
 
-.post-header-button{
+.post-header-button {
     display: flex;
     justify-content: space-between;
 }
 
-#deleteBtn{
-   border: none;
-   border-radius: 8px;
-   color:white;
-   background-color: red;
-   padding: 10px;
-    
-}
 
-#editBtn{
+#deleteBtn {
     border: none;
     border-radius: 8px;
-    color:white;
+    color: white;
+    background-color: red;
+    padding: 10px;
+
+
+}
+
+#editBtn {
+    border: none;
+    border-radius: 8px;
+    color: white;
     background-color: rgb(82, 4, 82);
-    padding: 10px;     
- }
+    padding: 10px;
+
+}
 
 
 
-.post-header{
+.post-header {
     display: flex;
     align-items: center;
     gap: 5px;
-     
+
 }
 
-.post-user-image img{
+.post-user-image img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.post-username{
-margin: 0px;
+.post-username {
+    margin: 0px;
+    color:white;
+    font-weight: 700;
 }
 
-.post-time{
+.post-time {
     color: rgb(211, 211, 211);
     margin: 0px;
     font-size: 12px;
 }
-.post-image{
+
+.post-image {
     display: flex;
     justify-content: center;
 
 }
 
-.post-image img{
+.post-image img {
     width: 50%;
     border-radius: 8px;
     margin: 15px;
-   
+
 }
 
-.comment-user-img img{
+.comment-user-img img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.comment-text-container{
-    background-color: rgb(55, 129, 55);
+.comment-text-container {
+    background-color: rgb(43, 50, 51);
     border-radius: 8px;
     padding: 10px;
+    color: white;
 }
 
-.comment-text-container h4, p{
-   margin: 0px;
+.comment-text-container h4,
+p {
+    margin: 0px;
 }
 
-.comment-text-container h4{
+.comment-text-container h4 {
     margin-bottom: 5px;
- }
+}
 
- .comment{
+.comment {
     display: flex;
     gap: 5px;
     margin-bottom: 20px;
- }
+}
 
- .comment-input-holder{
+.comment-input-holder {
     display: flex;
     gap: 5px;
- }
- .comment-input-field{
+}
+
+.comment-input-field {
     padding: 10px;
     outline: none;
     border-radius: 5px;
     width: 90%;
- }
+}
 
- .comment-btn{
+.comment-btn {
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(36, 0, 31);
     color: white;
-    
- }
 
- .comment-input-field-holder{
+}
+
+.comment-input-field-holder {
     width: 70%;
- }
- 
+}

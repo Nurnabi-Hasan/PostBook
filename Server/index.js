@@ -47,7 +47,7 @@ let query = db.query(getUserInfoSql,[userId, password], (err, result)=>{
 
 app.get("/getAllPosts", (req, res) =>{
 
-  const sqlforAllPosts= `SELECT users.userName AS postedUserName, users.userImage AS postdUserImage, posts.postId, posts.postedTime, posts.postedText, posts.postedImageUrl FROM posts INNER JOIN users ON posts.postedUserId=users.userId ORDER BY posts.postedTime DESC`;
+  const sqlforAllPosts= `SELECT users.userName AS postedUserName, users.userImage AS postdUserImage, posts.postId, posts.postedUserId, posts.postedTime, posts.postedText, posts.postedImageUrl FROM posts INNER JOIN users ON posts.postedUserId=users.userId ORDER BY posts.postedTime DESC`;
 
   let query = db.query(sqlforAllPosts, (err, result) =>{
     if(err){
@@ -125,7 +125,41 @@ app.post("/addNewPost", (req, res)=>{
 );
 
 
+
+
+app.delete("/getAllPosts/:postId", (req, res) => {
+  let id = req.params.postId;
+
+  let deleteQuery = `DELETE FROM posts WHERE postId=?`
+
+  db.query(deleteQuery, [id], (err, result) => {
+    if(err) {
+      console.log("Error delete post to the DB: ", err);
+    } else {
+      console.log('delte succuess')
+      return res.send('ok');
+    }
+  });
+}) ;
+
+app.put('/updatePost/:postId', (req, res) => {
+  const { postId } = req.params;
+  const { postedText, postedImageUrl } = req.body;
+
+  const sqlUpdate = `UPDATE posts SET postedText = ?, postedImageUrl = ? WHERE postId = ?`;
+
+  db.query(sqlUpdate, [postedText, postedImageUrl, postId], (err, result) => {
+    if (err) {
+      console.log("Error updating post: ", err);
+      res.status(500).send("Error updating post");
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+
 app.listen(port, () => {
     console.log(`Server is running on port  ${port}`);
     
-})
+});
